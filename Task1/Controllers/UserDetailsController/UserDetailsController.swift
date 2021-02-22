@@ -10,6 +10,10 @@ import Alamofire
 import MapKit
 import RealmSwift
 
+protocol UserDetailsControllerDelegate: class {
+    func pressed(name: String, email: String, Image: NSData)
+}
+
 class UserDetailsController: BaseViewController {
     
     var getList = "/api?results=50"
@@ -24,6 +28,10 @@ class UserDetailsController: BaseViewController {
     let roundButton = UIButton()
     
     var realm = try! Realm()
+    
+    let us = User()
+    
+    weak var delegate: UserDetailsControllerDelegate?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userImage: UIImageView!
@@ -100,6 +108,7 @@ extension UserDetailsController {
     }
     
     @objc func pressed() {
+        delegate?.pressed(name: us.name, email: us.email, Image: us.photoData!)
         roundButton.isSelected ? saveInfo() : remove()
         roundButton.setTitle(roundButton.isSelected ? "Save" : "Delete", for: .normal)
         roundButton.backgroundColor = roundButton.isSelected ? .link : .red
@@ -107,7 +116,6 @@ extension UserDetailsController {
     }
     
     func saveInfo() {
-        let us = User()
         us.name = userName.text ?? ""
         us.email = userEmail.text ?? ""
         us.photoData = NSData(data: userImage.image!.pngData()!)

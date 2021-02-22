@@ -18,10 +18,10 @@ class UserController: BaseViewController {
     var getList = "/api?results=50"
     var data = [ResultModel]()
     
-    let realm = try! Realm()
+    var usName = ""
+    var usEmail = ""
+    var usImage: UIImage?
     
-    let array = [ResultModel]()
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         userTableView.delegate = self
@@ -33,10 +33,6 @@ class UserController: BaseViewController {
         UserTableViewCell.registerIn(savedUserTableView)
         savedUserTableView.isHidden = true
         fetchData()
-        
-        realm.beginWrite()
-        realm.delete(realm.objects(User.self))
-        try! realm.commitWrite()
     }
     
     func fetchData() {
@@ -78,11 +74,9 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = savedUserTableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as! UserTableViewCell
-            let us = realm.objects(User.self)
-            cell.userFullName.text = us[indexPath.row].name
-            cell.userEmail.text = us[indexPath.row].email
-            let image = UIImage(data: us[indexPath.row].photoData! as Data)
-            cell.userImage.image = image
+            cell.userImage.image = usImage
+            cell.userFullName.text = usName
+            cell.userEmail.text = usEmail
             return cell
         }
     }
@@ -97,4 +91,13 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+}
+
+extension UserController: UserDetailsControllerDelegate {
+    func pressed(name: String, email: String, Image: NSData) {
+        usName = name
+        usEmail = email
+        usImage = UIImage(data: Image as Data)
+    }
+    
 }
