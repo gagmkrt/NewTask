@@ -20,7 +20,7 @@ class UserDetailsController: BaseViewController {
     var lng: Double?
     var country = ""
     
-    var locationManager = CLLocationManager()
+    var manager = CLLocationManager()
     let roundButton = UIButton()
     
     var realm = try! Realm()
@@ -54,17 +54,17 @@ class UserDetailsController: BaseViewController {
     }
     
     func setLocation() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
 }
 
 extension UserDetailsController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            locationManager.startUpdatingLocation()
+            manager.startUpdatingLocation()
             render(location)
         }
     }
@@ -79,7 +79,7 @@ extension UserDetailsController: CLLocationManagerDelegate {
         pin.coordinate = coordinate
         pin.title = country
         mapView.addAnnotation(pin)
-        locationManager.stopUpdatingLocation()
+        manager.stopUpdatingLocation()
     }
 }
 
