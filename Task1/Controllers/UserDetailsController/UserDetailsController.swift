@@ -11,14 +11,19 @@ import MapKit
 import RealmSwift
 
 protocol UserDetailsControllerDelegate: class {
-    func pressed(name: String, email: String, Image: NSData)
+    func pressed(name: String, email: String, image: String)
 }
 
-class UserDetailsController: BaseViewController {
-    
+class UserDetailsController: UIViewController {
+ 
+// MARK: - API
     var getList = "/api?results=50"
-    var name = ""
-    var value = ""
+// MARK: - Info proporties
+    var usName = ""
+    var usEmail = ""
+    var usImage = ""
+    var largeImage = ""
+    var usPhone = ""
                 
     var lat: Double?
     var lng: Double?
@@ -27,12 +32,10 @@ class UserDetailsController: BaseViewController {
     var manager = CLLocationManager()
     let roundButton = UIButton()
     
-    var realm = try! Realm()
-    
-    let us = User()
-    
+// MARK: - Delegate
+
     weak var delegate: UserDetailsControllerDelegate?
-    
+// MARK: - Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -45,21 +48,16 @@ class UserDetailsController: BaseViewController {
         super.viewDidLoad()
         
         saveButton()
-        fetchData()
         setLocation()
+        userName.text = usName
+        userEmail.text = usEmail
+        let url = URL(string: largeImage)
+        userImage.kf.setImage(with: url)
+        userPhone.text = usPhone
+        
+        userImage.layer.cornerRadius = userImage.frame.height / 2
     }
     
-    func fetchData() {
-        NetWorkService.request(url: getList + name + value, method: .get, param: nil, encoding: JSONEncoding.default) { (response: ResultModel) in
-            self.userName.text = response.name?.fullName
-            self.userPhone.text = response.phone
-            self.userEmail.text = response.email
-            self.country = response.country ?? ""
-            if let cover = response.photoUrl {
-                self.userImage.kf.setImage(with: cover)
-            }
-        }
-    }
     
     func setLocation() {
         manager.delegate = self
@@ -79,8 +77,7 @@ extension UserDetailsController: CLLocationManagerDelegate {
     
     func render(_ location: CLLocation) {
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: lat ?? 0, longitudeDelta: lng ?? 0)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 0, longitudinalMeters: 0)
         mapView.setRegion(region, animated: true)
         
         let pin = MKPointAnnotation()
@@ -108,33 +105,7 @@ extension UserDetailsController {
     }
     
     @objc func pressed() {
-        delegate?.pressed(name: us.name, email: us.email, Image: us.photoData!)
-        roundButton.isSelected ? saveInfo() : remove()
-        roundButton.setTitle(roundButton.isSelected ? "Save" : "Delete", for: .normal)
-        roundButton.backgroundColor = roundButton.isSelected ? .link : .red
-        roundButton.isSelected.toggle()
-    }
-    
-    func saveInfo() {
-        us.name = userName.text ?? ""
-        us.email = userEmail.text ?? ""
-        us.photoData = NSData(data: userImage.image!.pngData()!)
-
-        realm.beginWrite()
-        realm.add(us)
-        try! realm.commitWrite()
-    }
-    
-    func remove() {
-        realm.beginWrite()
-        realm.delete(realm.objects(User.self))
-        try! realm.commitWrite()
+        delegate?.pressed(name: usName, email: usEmail, image: usImage)
     }
 }
 
-
-class User: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var email = ""
-    @objc dynamic var photoData: NSData? = nil
-}

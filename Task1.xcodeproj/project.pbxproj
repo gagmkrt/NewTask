@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0AD2B682C473FA37FB6D400E /* Pods_Task1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C6858A7FB84AF490C46BF5 /* Pods_Task1.framework */; };
+		CC1EF6E925E6A28E00A1172C /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EF6E825E6A28E00A1172C /* Encoding.swift */; };
+		CC1EF6EC25E6A2A300A1172C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EF6EB25E6A2A300A1172C /* Router.swift */; };
+		CC1EF6F025E6A2B200A1172C /* SFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EF6EF25E6A2B200A1172C /* SFNetworking.swift */; };
+		CC1EF6F425E6A34700A1172C /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EF6F325E6A34700A1172C /* HomeService.swift */; };
+		CC42311B25E941D2001811CF /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC42311A25E941D2001811CF /* RealmModel.swift */; };
 		CC50A83A25DE8D75009C388A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A83925DE8D75009C388A /* AppDelegate.swift */; };
 		CC50A83C25DE8D75009C388A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A83B25DE8D75009C388A /* SceneDelegate.swift */; };
 		CC50A84125DE8D75009C388A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC50A83F25DE8D75009C388A /* Main.storyboard */; };
@@ -18,7 +23,6 @@
 		CC50A86725DE91A3009C388A /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A86525DE91A3009C388A /* UserTableViewCell.swift */; };
 		CC50A86825DE91A3009C388A /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC50A86625DE91A3009C388A /* UserTableViewCell.xib */; };
 		CC50A86D25DE94B9009C388A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A86C25DE94B9009C388A /* Extensions.swift */; };
-		CC50A87125DE9607009C388A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A87025DE9607009C388A /* NetworkService.swift */; };
 		CC50A87625DE969C009C388A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A87525DE969C009C388A /* Model.swift */; };
 		CC50A89025DF91A7009C388A /* SavedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A88E25DF91A7009C388A /* SavedUserTableViewCell.swift */; };
 		CC50A89C25DFA712009C388A /* UserDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A89B25DFA712009C388A /* UserDetailsController.swift */; };
@@ -28,6 +32,11 @@
 		1B924088624A4CA379E63883 /* Pods-Task1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task1.debug.xcconfig"; path = "Target Support Files/Pods-Task1/Pods-Task1.debug.xcconfig"; sourceTree = "<group>"; };
 		55C6858A7FB84AF490C46BF5 /* Pods_Task1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D9839C0F593079C172C18E /* Pods-Task1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task1.release.xcconfig"; path = "Target Support Files/Pods-Task1/Pods-Task1.release.xcconfig"; sourceTree = "<group>"; };
+		CC1EF6E825E6A28E00A1172C /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
+		CC1EF6EB25E6A2A300A1172C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CC1EF6EF25E6A2B200A1172C /* SFNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFNetworking.swift; sourceTree = "<group>"; };
+		CC1EF6F325E6A34700A1172C /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		CC42311A25E941D2001811CF /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		CC50A83625DE8D75009C388A /* Task1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC50A83925DE8D75009C388A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC50A83B25DE8D75009C388A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +49,6 @@
 		CC50A86525DE91A3009C388A /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		CC50A86625DE91A3009C388A /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		CC50A86C25DE94B9009C388A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CC50A87025DE9607009C388A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CC50A87525DE969C009C388A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CC50A88E25DF91A7009C388A /* SavedUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedUserTableViewCell.swift; sourceTree = "<group>"; };
 		CC50A89B25DFA712009C388A /* UserDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsController.swift; sourceTree = "<group>"; };
@@ -75,6 +83,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CC1EF6F625E6A35100A1172C /* HomeService */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EF6F325E6A34700A1172C /* HomeService.swift */,
+			);
+			path = HomeService;
+			sourceTree = "<group>";
+		};
+		CC42311925E941B7001811CF /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC42311A25E941D2001811CF /* RealmModel.swift */,
+			);
+			path = RealmModel;
+			sourceTree = "<group>";
+		};
 		CC50A82D25DE8D75009C388A = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +122,8 @@
 			children = (
 				CC50A83925DE8D75009C388A /* AppDelegate.swift */,
 				CC50A83B25DE8D75009C388A /* SceneDelegate.swift */,
+				CC42311925E941B7001811CF /* RealmModel */,
+				CC1EF6F625E6A35100A1172C /* HomeService */,
 				CC50A88325DECE01009C388A /* Stroryboards */,
 				CC50A86B25DE94A6009C388A /* Extensions */,
 				CC50A86F25DE95CA009C388A /* NetworkService */,
@@ -156,8 +182,10 @@
 		CC50A86F25DE95CA009C388A /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				CC1EF6E825E6A28E00A1172C /* Encoding.swift */,
+				CC1EF6EB25E6A2A300A1172C /* Router.swift */,
+				CC1EF6EF25E6A2B200A1172C /* SFNetworking.swift */,
 				CC50A87425DE9677009C388A /* Models */,
-				CC50A87025DE9607009C388A /* NetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -318,13 +346,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1EF6F425E6A34700A1172C /* HomeService.swift in Sources */,
+				CC42311B25E941D2001811CF /* RealmModel.swift in Sources */,
 				CC50A89C25DFA712009C388A /* UserDetailsController.swift in Sources */,
 				CC50A87625DE969C009C388A /* Model.swift in Sources */,
 				CC50A86025DE90E5009C388A /* BaseViewController.swift in Sources */,
+				CC1EF6EC25E6A2A300A1172C /* Router.swift in Sources */,
 				CC50A85025DE8DDB009C388A /* UserController.swift in Sources */,
-				CC50A87125DE9607009C388A /* NetworkService.swift in Sources */,
+				CC1EF6F025E6A2B200A1172C /* SFNetworking.swift in Sources */,
 				CC50A83A25DE8D75009C388A /* AppDelegate.swift in Sources */,
 				CC50A86725DE91A3009C388A /* UserTableViewCell.swift in Sources */,
+				CC1EF6E925E6A28E00A1172C /* Encoding.swift in Sources */,
 				CC50A89025DF91A7009C388A /* SavedUserTableViewCell.swift in Sources */,
 				CC50A83C25DE8D75009C388A /* SceneDelegate.swift in Sources */,
 				CC50A86D25DE94B9009C388A /* Extensions.swift in Sources */,

@@ -8,6 +8,5 @@ target 'Task1' do
   # Pods for Task1
 
 pod 'Kingfisher', '~> 4.0'
-pod 'Alamofire'
-
+pod 'AlamofireSwiftyJSON'
 end

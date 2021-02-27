@@ -7,19 +7,8 @@
 
 import Foundation
 
-struct BaseResponse: Codable {
-    var info: InfoModel?
-}
-
-struct InfoModel: Codable {
-    var page: Int?
-    var results: Int?
-    var seed: String?
-    var version: String?
-}
-
-struct ResponseModel: Codable {
-    var results: [ResultModel]
+struct ResponseModel<T: Codable>: Codable {
+    var results: T?
 }
 
 struct ResultModel: Codable {
@@ -37,8 +26,8 @@ struct ResultModel: Codable {
 }
 
 struct UserId: Codable {
-    var name: String
-    var value: String
+    var name: String?
+    var value: String?
 }
 
 struct UserName: Codable {
@@ -47,7 +36,7 @@ struct UserName: Codable {
     var title: String
     
     var fullName: String {
-        return title + "" + first + "" + last
+        return title + " " + first + " " + last
     }
 }
 

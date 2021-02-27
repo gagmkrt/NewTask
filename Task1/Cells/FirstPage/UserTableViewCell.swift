@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class UserTableViewCell: UITableViewCell {
     
@@ -21,5 +22,12 @@ class UserTableViewCell: UITableViewCell {
         if let cover = item.photoUrl {
             self.userImage.kf.setImage(with: cover)
         }
+    }
+    
+    func setRealmData(data: Info) {
+        userFullName.text = data.name
+        userEmail.text = data.email
+        let image = URL(string: data.photoData)
+        userImage.kf.setImage(with: image)
     }
 }
