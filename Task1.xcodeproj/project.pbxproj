@@ -26,6 +26,8 @@
 		CC50A87625DE969C009C388A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A87525DE969C009C388A /* Model.swift */; };
 		CC50A89025DF91A7009C388A /* SavedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A88E25DF91A7009C388A /* SavedUserTableViewCell.swift */; };
 		CC50A89C25DFA712009C388A /* UserDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC50A89B25DFA712009C388A /* UserDetailsController.swift */; };
+		CC5E2F6E2633F7FA002BF4AF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E2F6D2633F7FA002BF4AF /* NetworkService.swift */; };
+		CC5E2F712633F846002BF4AF /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E2F702633F846002BF4AF /* BaseAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		CC50A87525DE969C009C388A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CC50A88E25DF91A7009C388A /* SavedUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedUserTableViewCell.swift; sourceTree = "<group>"; };
 		CC50A89B25DFA712009C388A /* UserDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsController.swift; sourceTree = "<group>"; };
+		CC5E2F6D2633F7FA002BF4AF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CC5E2F702633F846002BF4AF /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		CC50A83825DE8D75009C388A /* Task1 */ = {
 			isa = PBXGroup;
 			children = (
+				CC5E2F6C2633F7DD002BF4AF /* CustomRequest */,
 				CC50A83925DE8D75009C388A /* AppDelegate.swift */,
 				CC50A83B25DE8D75009C388A /* SceneDelegate.swift */,
 				CC42311925E941B7001811CF /* RealmModel */,
@@ -229,6 +234,15 @@
 				CC50A88E25DF91A7009C388A /* SavedUserTableViewCell.swift */,
 			);
 			path = SecondPage;
+			sourceTree = "<group>";
+		};
+		CC5E2F6C2633F7DD002BF4AF /* CustomRequest */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E2F6D2633F7FA002BF4AF /* NetworkService.swift */,
+				CC5E2F702633F846002BF4AF /* BaseAPI.swift */,
+			);
+			path = CustomRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,8 +370,10 @@
 				CC1EF6F025E6A2B200A1172C /* SFNetworking.swift in Sources */,
 				CC50A83A25DE8D75009C388A /* AppDelegate.swift in Sources */,
 				CC50A86725DE91A3009C388A /* UserTableViewCell.swift in Sources */,
+				CC5E2F6E2633F7FA002BF4AF /* NetworkService.swift in Sources */,
 				CC1EF6E925E6A28E00A1172C /* Encoding.swift in Sources */,
 				CC50A89025DF91A7009C388A /* SavedUserTableViewCell.swift in Sources */,
+				CC5E2F712633F846002BF4AF /* BaseAPI.swift in Sources */,
 				CC50A83C25DE8D75009C388A /* SceneDelegate.swift in Sources */,
 				CC50A86D25DE94B9009C388A /* Extensions.swift in Sources */,
 			);
