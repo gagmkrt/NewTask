@@ -81,7 +81,11 @@ extension UserController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = savedUserTableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as! UserTableViewCell
-            cell.setRealmData(data: secondData[indexPath.row])
+            
+            let reversedData = secondData.reversed()[indexPath.row]
+            
+            cell.setRealmData(data: reversedData)
+            
             return cell
         }
     }
